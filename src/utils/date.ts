@@ -1,5 +1,10 @@
 export const getCurrentDate = () => {
-    const date = new Date();
-    const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
-};
+  const date = new Date()
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }
+  return date.toLocaleDateString('en-US', options)
+}

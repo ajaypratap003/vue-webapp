@@ -6,6 +6,6 @@ import { mount } from '@vue/test-utils'
 describe('HelloWorld', () => {
   it('renders properly', () => {
     // const wrapper = mount(HelloWorld, { props: { msg: 'Hello Vitest' } })
-    expect(2+2).toEqual(4)
+    expect(2 + 2).toEqual(4)
   })
 })

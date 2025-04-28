@@ -21,7 +21,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'TodoList',
-      component: TodoList
+      component: TodoList,
     },
   ],
 })

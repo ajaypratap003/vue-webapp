@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { Todo } from "@/models/todo";
+import type { Todo } from '@/models/todo'
 
 export const useTodosStore = defineStore('todos', () => {
   const todos = ref<Todo[]>([])
@@ -10,7 +10,7 @@ export const useTodosStore = defineStore('todos', () => {
   }
 
   const removeTodo = (id: string) => {
-    todos.value=todos.value.filter((todo) => todo?.id !== id)
+    todos.value = todos.value.filter((todo) => todo?.id !== id)
   }
 
   const editTodo = (id: string, updatedTodo: Todo) => {
@@ -21,7 +21,7 @@ export const useTodosStore = defineStore('todos', () => {
   }
 
   const clearAllTodos = () => {
-    todos.value.length = 0;
+    todos.value.length = 0
   }
 
   return {
@@ -29,6 +29,6 @@ export const useTodosStore = defineStore('todos', () => {
     addTodo,
     editTodo,
     removeTodo,
-    clearAllTodos
+    clearAllTodos,
   }
 })
