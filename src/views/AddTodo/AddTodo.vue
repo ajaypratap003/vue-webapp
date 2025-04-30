@@ -165,7 +165,7 @@ export default defineComponent({
 
         setTimeout(() => {
           this.redirectToRouteTodoList()
-        }, 500)
+        }, 1000)
       }
     },
   },

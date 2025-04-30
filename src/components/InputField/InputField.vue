@@ -31,16 +31,11 @@ export default defineComponent({
       default: '',
     },
   },
-  emits: ['change:value'],
-  setup(props, { emit }) {
-    const onChangeValue = (event: Event) => {
+  methods: {
+    onChange(event: MouseEvent) {
       const target = event.target as HTMLInputElement
-      emit('change:value', target.value)
-    }
-
-    return {
-      onChangeValue,
-    }
+      this.$emit('change:value', target.value)
+    },
   },
 })
 </script>
@@ -53,8 +48,8 @@ export default defineComponent({
       :type="type"
       :placeholder="placeholder"
       :value="value"
-      @input="onChangeValue"
-      @change="onChangeValue"
+      @input="onChange"
+      @change="onChange"
       v-bind="$attrs"
     />
     <span v-if="error" class="error">{{ error }}</span>

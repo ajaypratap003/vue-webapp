@@ -6,7 +6,7 @@
         <button class="toggle-button">{{ isExpanded ? '-' : '+' }}</button>
       </div>
       <div v-if="isExpanded">
-        <div v-for="{ id, title, priority, createdAt } in todos" :key="id" class="card-item">
+        <div v-for="{ id, title, priority, createdAt } in todos" :key="id" class="card-item" :test-id="id">
           <p>Title: {{ title }}</p>
           <p>Priority: {{ priority }}</p>
           <p>Created: {{ createdAt }}</p>
