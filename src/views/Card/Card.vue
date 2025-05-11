@@ -3,16 +3,16 @@
     <div class="card">
       <div class="card-header" @click="toggleCard">
         <p>{{ priority }} ({{ todos.length }})</p>
-        <button class="toggle-button">{{ isExpanded ? '-' : '+' }}</button>
+        <span>{{ isExpanded ? '▼' : '▶' }}</span>
       </div>
       <div v-if="isExpanded">
         <div v-for="{ id, title, priority, createdAt } in todos" :key="id" class="card-item" :test-id="id">
           <p>Title: {{ title }}</p>
           <p>Priority: {{ priority }}</p>
           <p>Created: {{ createdAt }}</p>
-          <div class="card-actions">
-            <Button label="Edit" style="margin-left: 10px" @click="editTodo(id)" />
-            <Button label="Delete" variant="danger" @click="deleteTodo(id)" />
+           <div class="action-buttons">
+            <span class="icon" @click="editTodo(id)">✏️</span>
+            <span class="icon" @click="deleteTodo(id)">🗑️</span>
           </div>
         </div>
       </div>
@@ -96,14 +96,25 @@ export default defineComponent({
   background-color: #f0f0f0;
   border-radius: 5px 5px 0 0;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 .card-item {
   border-bottom: 1px solid #ddd;
   padding: 8px 0;
-  min-height: 185px;
+  min-height: 200px;
 }
 .card-item:last-child {
   border-bottom: none;
-  min-height: 165px;
+  min-height: 180px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    float: right;
+}
+.icon {
+    font-size: 16px;
+    cursor: pointer;
 }
 </style>

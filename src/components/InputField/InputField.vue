@@ -32,7 +32,7 @@ export default defineComponent({
     },
   },
   methods: {
-    onChange(event: MouseEvent) {
+    onChange(event: Event) {
       const target = event.target as HTMLInputElement
       this.$emit('change:value', target.value)
     },
