@@ -11,8 +11,8 @@
           <p>Priority: {{ priority }}</p>
           <p>Created: {{ createdAt }}</p>
            <div class="action-buttons">
-            <span class="icon" @click="editTodo(id)">✏️</span>
-            <span class="icon" @click="deleteTodo(id)">🗑️</span>
+            <span class="icon" @click="editTodo(id)" data-testid="edit-todo">✏️</span>
+            <span class="icon" @click="deleteTodo(id)" data-testid="delete-todo">🗑️</span>
           </div>
         </div>
       </div>

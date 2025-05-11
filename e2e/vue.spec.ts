@@ -65,7 +65,7 @@ test('should edit todo and updated on todo list page', async ({ page }) => {
     await addTodo(page, {title:'Test Todo', priority:'Moderate'});
    
     //Click on the edit button
-    await page.getByRole('button', { name: 'Edit' }).click();
+    await page.getByTestId('edit-todo').click();
     //Verify that the add todo page is loaded
     await expect(page).toHaveURL(/.*edit-todo/);
 
@@ -96,7 +96,7 @@ test('should delete todo item', async ({ page }) => {
   await addTodo(page, {title:'Test Todo', priority:'Critical'});
 
   //Click on the delete button
-  await page.getByRole('button', { name: 'Delete' }).click();
+  await page.getByTestId('delete-todo').click();
 
   //Verify that the todo item is deleted to the todo todo list page
   await expect(page.locator('p')).toHaveText('No todos available. Click on Add Todo button to add new todo item');
